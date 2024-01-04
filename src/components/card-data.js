@@ -6,15 +6,15 @@ const getCardDataAr = () => {
     return cardDataAr;
 };
 
-const fetchCardData = (theme = 'tiger') => {
-    fetch(`${apiLink}?query=${theme}&per_page=12&${apiKey}`, { mode: 'cors' })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            cardDataAr.push(data.results);
-        })
-        .catch(error => console.log(error));
+const fetchCardData = async (theme = 'tiger') => {
+    try {
+        const response = await fetch(`${apiLink}?query=${theme}&per_page=12&${apiKey}`, { mode: 'cors' });
+        const data = await response.json();
+        cardDataAr.push(data.results);
+        return cardDataAr;
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 export { getCardDataAr, fetchCardData };
