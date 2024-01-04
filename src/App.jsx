@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import CardContainer from './components/CardContainer';
+import PlaySection from './components/PlaySection';
+import { fetchCardData } from './components/card-data';
 import './App.css';
 
 function App() {
-
+  //Need to call fetchCardData once outside CardContainer
   return (
     <>
-      <CardContainer></CardContainer>
+      <PlaySection></PlaySection>
     </>
   );
 }
