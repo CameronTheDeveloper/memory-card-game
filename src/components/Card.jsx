@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Card({ addScore, children }) {
+export default function Card({ addScore, handleLose, children }) {
     const [selected, setSelected] = useState(false);
 
     function handleClick() {
@@ -8,7 +8,7 @@ export default function Card({ addScore, children }) {
             addScore();
             setSelected(true);
         } else {
-            console.log('Lose');
+            handleLose();
         }
     }
 

@@ -12,6 +12,11 @@ export default function PlaySection() {
         setScore(newScoreData);
     };
 
+    const handleLose = () => {
+        const newScoreData = { ...scoreData, score: 0 };
+        setScore(newScoreData);
+    };
+
     useEffect(() => {
 
         let ignore = false;
@@ -29,6 +34,7 @@ export default function PlaySection() {
 
             <CardContainer
                 addScore={addScore}
+                handleLose={handleLose}
                 cardDataAr={cardData}
             ></CardContainer>
         </div>
