@@ -2,7 +2,7 @@ import Card from "./Card";
 
 export default function CardContainer({ addScore, cardDataAr }) {
     return (
-        <div id='card-container'>
+        <div className='card-container'>
             <ul>
                 {cardDataAr.map(cardData =>
                     <li key={cardData.id}>
