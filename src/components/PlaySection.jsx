@@ -12,13 +12,17 @@ export default function PlaySection() {
         setScore(newScoreData);
     };
 
+    const setNewHighScore = (newHighScore) => {
+        const newScoreData = { ...scoreData, highScore: newHighScore };
+        setScore(newScoreData);
+    };
+
     const handleLose = () => {
         const newScoreData = { ...scoreData, score: 0 };
         setScore(newScoreData);
     };
 
     useEffect(() => {
-
         let ignore = false;
         !ignore && fetchCardData('tiger', setCardData);
         return () => {
@@ -30,6 +34,7 @@ export default function PlaySection() {
         <div id='play-section'>
             <ScoreBoard
                 scoreData={scoreData}
+                setNewHighScore={setNewHighScore}
             ></ScoreBoard>
 
             <CardContainer

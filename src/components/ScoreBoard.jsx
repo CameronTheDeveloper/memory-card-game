@@ -1,4 +1,13 @@
-export default function ScoreBoard({ scoreData }) {
+import { useEffect } from "react";
+
+export default function ScoreBoard({ scoreData, setNewHighScore }) {
+    function highScoreBeaten() {
+        return scoreData.score > scoreData.highScore;
+    }
+
+    useEffect(() => {
+        highScoreBeaten() && setNewHighScore(scoreData.score);
+    }, [scoreData.score]);
 
     return (
         <div className="score-board">
