@@ -5,7 +5,7 @@ export default function CardContainer({ cardDataAr }) {
         <div id='card-container'>
             <ul>
                 {cardDataAr.map(cardData =>
-                    <li key={cardData.key}>
+                    <li key={cardData.id}>
                         <Card>Card</Card>
                     </li>
                 )}
