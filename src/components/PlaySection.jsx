@@ -5,11 +5,11 @@ import { fetchCardData } from "./card-data";
 
 export default function PlaySection() {
     const [cardData, setCardData] = useState([]);
-    const [score, setScore] = useState(0);
-    const [highScore, setHighScore] = useState(0);
+    const [scoreData, setScore] = useState({ score: 0, highScore: 0 });
 
     const addScore = () => {
-        setScore(score + 1);
+        const newScoreData = { ...scoreData, score: scoreData.score + 1 };
+        setScore(newScoreData);
     };
 
     useEffect(() => {
@@ -24,8 +24,7 @@ export default function PlaySection() {
     return (
         <div id='play-section'>
             <ScoreBoard
-                score={score}
-                highScore={highScore}
+                scoreData={scoreData}
             ></ScoreBoard>
 
             <CardContainer
