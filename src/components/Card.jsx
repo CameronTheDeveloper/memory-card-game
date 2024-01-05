@@ -1,6 +1,7 @@
-export default function Card() {
-
+export default function Card({ key }) {
     return (
-        <div className="card"></div>
+        <li key={key} className="card">
+            Card
+        </li>
     );
 }
