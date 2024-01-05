@@ -1,21 +1,14 @@
 import Card from "./Card";
 
-export default function CardContainer() {
+export default function CardContainer({ cardDataAr }) {
     return (
         <div id='card-container'>
             <ul>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
+                {cardDataAr.map(cardData =>
+                    <li key={cardData.key}>
+                        <Card>Card</Card>
+                    </li>
+                )}
             </ul>
         </div>
     );
