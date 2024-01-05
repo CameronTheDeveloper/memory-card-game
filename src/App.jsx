@@ -4,9 +4,15 @@ import ScoreBoard from './components/ScoreBoard';
 import './App.css';
 
 function App() {
+  const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+
   return (
     <>
-      <ScoreBoard></ScoreBoard>
+      <ScoreBoard
+        score={score}
+        highScore={highScore}
+      ></ScoreBoard>
       <PlaySection></PlaySection>
     </>
   );
