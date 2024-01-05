@@ -1,19 +1,9 @@
 import { useState } from "react";
 
-export default function Card({ addScore, handleLose, children }) {
-    const [selected, setSelected] = useState(false);
-
-    function handleClick() {
-        if (!selected) {
-            addScore();
-            setSelected(true);
-        } else {
-            handleLose();
-        }
-    }
+export default function Card({ cardID, handleCardSelected, children }) {
 
     return (
-        <button onClick={handleClick} className="card">
+        <button onClick={() => handleCardSelected(cardID)} className="card">
             {children}
         </button>
     );
