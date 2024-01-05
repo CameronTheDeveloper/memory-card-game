@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import CardContainer from "./CardContainer";
 import { fetchCardData } from "./card-data";
 
-export default function PlaySection() {
+export default function PlaySection({ addScore }) {
     const [cardData, setCardData] = useState([]);
 
     useEffect(() => {
+
         let ignore = false;
         !ignore && fetchCardData('tiger', setCardData);
         return () => {
@@ -15,7 +16,10 @@ export default function PlaySection() {
 
     return (
         <div id='play-section'>
-            <CardContainer cardDataAr={cardData}></CardContainer>
+            <CardContainer
+                addScore={addScore}
+                cardDataAr={cardData}
+            ></CardContainer>
         </div>
     );
 }

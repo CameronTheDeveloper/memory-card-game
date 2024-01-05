@@ -7,13 +7,17 @@ function App() {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
 
+  const addScore = () => {
+    setScore(score + 1);
+  };
+
   return (
     <>
       <ScoreBoard
         score={score}
         highScore={highScore}
       ></ScoreBoard>
-      <PlaySection></PlaySection>
+      <PlaySection addScore={addScore}></PlaySection>
     </>
   );
 }

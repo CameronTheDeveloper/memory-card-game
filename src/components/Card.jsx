@@ -1,6 +1,9 @@
-export default function Card({ children }) {
+export default function Card({ addScore, children }) {
+    function handleClick() {
+        addScore();
+    }
     return (
-        <button className="card">
+        <button onClick={handleClick} className="card">
             {children}
         </button>
     );
