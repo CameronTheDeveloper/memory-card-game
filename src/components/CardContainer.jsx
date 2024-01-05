@@ -6,7 +6,11 @@ export default function CardContainer({ cardDataAr }) {
             <ul>
                 {cardDataAr.map(cardData =>
                     <li key={cardData.id}>
-                        <Card>Card</Card>
+                        <Card>
+                            <img
+                                src={cardData.urls.thumb}
+                                alt={cardData.alt_description} />
+                        </Card>
                     </li>
                 )}
             </ul>

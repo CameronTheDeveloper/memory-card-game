@@ -1,7 +1,7 @@
-export default function Card() {
+export default function Card({ children }) {
     return (
         <div className="card">
-            Card
+            {children}
         </div>
     );
 }
