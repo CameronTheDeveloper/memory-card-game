@@ -7,11 +7,11 @@ export default function PlaySection() {
 
     useEffect(() => {
         let ignore = false;
-        ignore == false && setCardData(fetchCardData);
+        !ignore && fetchCardData('tiger', setCardData);
         return () => {
             ignore = true;
         };
-    }, [cardData]);
+    }, []);
 
     return (
         <div id='play-section'>
