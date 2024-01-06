@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Card from "./Card";
-
+import { shuffleArray } from "./shuffleArray";
 
 export default function CardContainer({ addScore, handleLose, cardDataAr }) {
     const [selectedCards, setSelectedCards] = useState([]);
+    const shuffledCardDataAr = shuffleArray(cardDataAr);
 
     function handleCardSelected(cardID) {
         if (selectedCards.includes(cardID)) {
@@ -19,7 +20,7 @@ export default function CardContainer({ addScore, handleLose, cardDataAr }) {
     return (
         <div className='card-container'>
             <ul>
-                {cardDataAr.map(cardData =>
+                {shuffledCardDataAr.map(cardData =>
                     <li key={cardData.id}>
                         <Card
                             cardID={cardData.id}
