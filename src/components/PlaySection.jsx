@@ -31,7 +31,7 @@ export default function PlaySection() {
     };
   }, []);
 
-  if (cardDataError) return <p>A network error occured while retrieving photos</p>
+  if (cardDataError) return <p>A network error occured while retrieving card data.</p>
 
   return (
     <div id="play-section">
