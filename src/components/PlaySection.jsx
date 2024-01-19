@@ -5,6 +5,7 @@ import { fetchCardData } from "./card-data";
 
 export default function PlaySection() {
   const [cardData, setCardData] = useState([]);
+  const [cardDataLoading, setCardDataLoading] = useState(true);
   const [cardDataError, setCardDataError] = useState(null);
   const [scoreData, setScore] = useState({ score: 0, highScore: 0 });
 
@@ -25,14 +26,15 @@ export default function PlaySection() {
 
   useEffect(() => {
     let ignore = false;
-    !ignore && fetchCardData("tiger", setCardData, setCardDataError);
+    !ignore && fetchCardData("tiger", setCardData, setCardDataLoading, setCardDataError);
     return () => {
       ignore = true;
     };
   }, []);
 
+  if (cardDataLoading) return <p>Card Data Loading...</p>
   if (cardDataError) return <p>A network error occured while retrieving card data.</p>
-
+  
   return (
     <div id="play-section">
       <ScoreBoard
